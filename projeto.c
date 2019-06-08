@@ -112,6 +112,7 @@ int menuapos(){
 int menubolao(q	){
 	int k;
 	printf("-----BOLAO-----\n1.Novo\n2.Alterar\n3.Finalizar\n4.Imprimir\n5.Verificar Ganhador\n0.Sair\n");
+	printf("Escolha uma opcao: ");
 	scanf("%d",&k);
 	
 	return k;
@@ -125,7 +126,8 @@ void imprime(tApostador d) {
 }
 
 	int novoBolao(){
-		// falta inserir a data atual
+		// falta inserir a data atual 
+		//IF DATA == ATUAL{
 		tbolao g;
 		//g.bolaoU.quant = 1; //- SO PRA TESTAR A FUNÇÃO
 		//g.bolaoV.quant = 1;
@@ -205,6 +207,22 @@ void imprime(tApostador d) {
 			printf("Boloes ja cadastrados para esta data do sorteio.\n");
 			}while(resp4!=0);
 		}
+		
+		//IF DATA DIFERENTE DA ARMAZENADA{
+			int resp5;
+			do{
+			printf("Voce realmente deseja cadastrar um novo sorteio?\nVoce perdera todas as informacoes dos boloes atualmente cadastrados.\n");
+			printf("1.SIM\n2.NAO");
+			scanf("%d",&resp5);
+			
+			if(resp5==1){
+				g.bolaoU.quant = 0;
+				g.bolaoV.quant = 0;
+			}
+			
+			
+			
+	}while(resp5!=2);
 	}
 
 int main(){
