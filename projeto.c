@@ -1,4 +1,4 @@
-//Marcelo Jânio & Vitor Ribeiro
+//Marcelo JÃ¢nio & Vitor Ribeiro os gods
 #include <string.h>
 #include <stdio.h>
 #define MAX_A 200
@@ -175,7 +175,7 @@ void imprime(tApostador d) {
 			
 			
 		}
-		//printf("Qual dos bolões você deseja cadastrar:\n1.BolaoUm\n2.BolaoVarios\n0.Sair\n);
+		//printf("Qual dos bolÃµes vocÃª deseja cadastrar:\n1.BolaoUm\n2.BolaoVarios\n0.Sair\n);
 	}
 
 int main(){
