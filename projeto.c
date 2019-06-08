@@ -1,4 +1,4 @@
-//Marcelo Jânio & Vitor Ribeiro
+//Marcelo JÃ¢nio & Vitor Ribeiro
 #include <string.h>
 #include <stdio.h>
 #define MAX_A 200
@@ -127,6 +127,8 @@ void imprime(tApostador d) {
 	int novoBolao(){
 		// falta inserir a data atual
 		tbolao g;
+		//g.bolaoU.quant = 1; - SO PRA TESTAR A FUNÃ‡ÃƒO
+		//g.bolaoV.quant = 1;
 		printf("Digite a data do sorteio:\n");
 		scanf("%d%d%d",&g.data.dia,&g.data.mes,&g.data.ano);
 		printf("Data = %d/%d/%d\n",g.data.dia,g.data.mes,g.data.ano);
@@ -157,25 +159,46 @@ void imprime(tApostador d) {
 		}
 
 		
-		if(g.bolaoU.quant == 0){
-			char resp2;
+		if(g.bolaoU.quant == 0 && g.bolaoV.quant != 0){
+			int resp2;
+			do{
 			printf("1.BOLAOUM\n");
-			printf("Deseja criar um bolao do tipo BolaoUM?\ns-SIM n-NAO\n");
-			scanf("%c",&resp2);
+			printf("Deseja criar um bolao do tipo BolaoUM?\n1.SIM\n2.NAO\n");
+			scanf("%d",&resp2);
 			
-			if(resp2 == 's'){
+			if(resp2 == 1){
 				//cadastraBolaoum();
 				g.bolaoU.finalizado = 0;
 			}
-			if(resp2 == 'n'){
+			if(resp2 == 2){
 			
 				//RETORNA PRO MENU BOLAO;
 			}
+			}while(resp2!=2);
 			
 			
 			
 		}
-		//printf("Qual dos bolões você deseja cadastrar:\n1.BolaoUm\n2.BolaoVarios\n0.Sair\n);
+		
+		if(g.bolaoV.quant == 0 && g.bolaoU.quant !=0){
+			int resp3;
+			do{
+			printf("2.BOLAOV\n");
+			printf("Deseja criar um bolao do tipo BOLAOV?\n1.SIM\n2.NAO\n");
+			scanf("%d",&resp3);
+			
+			if(resp3 == 1){
+				//cadastraBolaoum();
+				g.bolaoV.finalizado = 0;
+			}
+			if(resp3 == 2){
+			
+				//RETORNA PRO MENU BOLAO;
+			}
+			}while(resp3!=2);
+			
+			
+		}
 	}
 
 int main(){
